@@ -15,8 +15,10 @@ public class Medicine {
     private String laboratory;
     private boolean generic;
     
-    public Medicine(String name, String laboratory, boolean generic) {
-        
+    public Medicine(String name, String laboratory, boolean generic) throws Exception {
+        this.setName(name);
+        this.setLaboratory(laboratory);
+        this.setGeneric(generic);
     }
 
     public String getName() {

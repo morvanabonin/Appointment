@@ -5,6 +5,8 @@
  */
 package appointment;
 
+import java.util.Date;
+
 /**
  *
  * @author morvana.bonin
@@ -12,11 +14,13 @@ package appointment;
 public class Patient {
     
     private String name;
-    private String birth_date;
+    private Date birth_date;
     private String gender;
    
-    public Patient(String name, String birth_date, String gender) {
-        
+    public Patient(String name, Date birth_date, String gender) throws Exception {
+        this.setName(name);
+        this.setBirth_date(birth_date);
+        this.setGender(gender);
     }
 
     public String getName() {
@@ -31,16 +35,12 @@ public class Patient {
         }
     }
     
-    public String getBirth_date() {
+    public Date getBirth_date() {
         return birth_date;
     }
 
-    public void setBirth_date(String birth_date) throws Exception {
-        if(! birth_date.isEmpty()) {
+    public void setBirth_date(Date birth_date) {
             this.birth_date = birth_date;
-        } else {
-            throw new Exception ("Birth date cannot be empty");
-        }
     }
 
     public String getGender() {

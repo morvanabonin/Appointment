@@ -14,8 +14,13 @@ public class Appointment {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) throws Exception {
+        Medicine obj = new Medicine("Dorflex", "Sanofi", false);
+        
+        System.out.println("Testando");
+		
+        System.out.println("Iremos imprimir um medicamento: " + obj.getName() + " ele é do laboratorio: " + obj.getLaboratory());
+        
     }
     
 }
