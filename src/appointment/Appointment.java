@@ -16,10 +16,13 @@ public class Appointment {
      */
     public static void main(String[] args) throws Exception {
         Medicine obj = new Medicine("Dorflex", "Sanofi", false);
-        
+         Patient objP = new Patient("José Ferreira", "02-02-1989", "Masculino");
+                
         System.out.println("Testando");
-		
-        System.out.println("Iremos imprimir um medicamento: " + obj.getName() + " ele é do laboratorio: " + obj.getLaboratory());
+	System.out.println("Iremos imprimir um medicamento: " + obj.getName() + " ele é do laboratorio: " + obj.getLaboratory());
+        System.out.println("Iremos imprimir um paciente de nome: " + objP.getName() + " data de nascimento: " + objP.getBirth_date() + " do sexo " + objP.getGender());
+        
+       
         
     }
     

@@ -5,8 +5,6 @@
  */
 package appointment;
 
-import java.util.Date;
-
 /**
  *
  * @author morvana.bonin
@@ -14,13 +12,17 @@ import java.util.Date;
 public class Patient {
     
     private String name;
-    private Date birth_date;
+    private String birth_date;
     private String gender;
    
-    public Patient(String name, Date birth_date, String gender) throws Exception {
+    public Patient(String name, String birth_date, String gender) throws Exception {
         this.setName(name);
         this.setBirth_date(birth_date);
         this.setGender(gender);
+    }
+
+    Patient() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getName() {
@@ -35,12 +37,16 @@ public class Patient {
         }
     }
     
-    public Date getBirth_date() {
+    public String getBirth_date() {
         return birth_date;
     }
 
-    public void setBirth_date(Date birth_date) {
+    public void setBirth_date(String birth_date) throws Exception {
+        if(! birth_date.isEmpty()) {
             this.birth_date = birth_date;
+        } else {
+            throw new Exception ("Birth date cannot be empty");
+        }
     }
 
     public String getGender() {
