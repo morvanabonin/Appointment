@@ -5,20 +5,25 @@
  */
 package appointment;
 
+import java.util.Random;
+
 /**
  *
  * @author morvana.bonin
  */
 public class Medicine {
     
+    private int code;
     private String name;
-    private String laboratory;
-    private boolean generic;
+    private String description;
     
-    public Medicine(String name, String laboratory, boolean generic) throws Exception {
+    public Medicine(String name, String description) throws Exception {
         this.setName(name);
-        this.setLaboratory(laboratory);
-        this.setGeneric(generic);
+        this.setDescription(description);
+    }
+    
+    public int getCode() {
+        return code = this._randomCode();
     }
 
     public String getName() {
@@ -32,25 +37,19 @@ public class Medicine {
             throw new Exception ("Name cannot be empty");
         }
     }
-
-    public String getLaboratory() {
-        return laboratory;
+    
+    public String getDescription() {
+        return description;
     }
 
-    public void setLaboratory(String laboratory) throws Exception {
-        if(! laboratory.isEmpty()) {
-            this.laboratory = laboratory;
-        } else {
-            throw new Exception ("Laboratory cannot be empty");
-        }
-    }
-
-    public boolean isGeneric() {
-        return generic;
-    }
-
-    public void setGeneric(boolean generic) {
-        this.generic = generic;
+    public void setDescription(String description) {
+        this.description = description;
     }
     
+    //Needs to better implementation, because can produce equal numbers and not being validated it.
+    private int _randomCode () {
+        Random random = new Random();
+        code = random.nextInt(999999);
+        return code;
+    }
 }
